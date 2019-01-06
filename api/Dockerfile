@@ -1,15 +1,6 @@
-# Build Stage
-FROM microsoft/aspnetcore-build:2 AS build-env
-WORKDIR /api
+FROM microsoft/dotnet:2-runtime
 
-COPY api.csproj .
-RUN dotnet restore
+WORKDIR /app
+COPY bin/Debug/netcoreapp2.0/publish .
 
-COPY . .
-RUN dotnet publish -o /publish
-
-# Runtime Image Stage
-FROM microsoft/aspnetcore:2
-WORKDIR /publish
-COPY --from=build-env /publish .
 ENTRYPOINT ["dotnet", "api.dll"]

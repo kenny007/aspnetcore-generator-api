@@ -1,7 +1,7 @@
 # Build stage
 FROM microsoft/dotnet:2.2-sdk AS build-env
 
-WORKDIR generator
+WORKDIR /generator
 
 # restore
 COPY api/api.csproj ./api/

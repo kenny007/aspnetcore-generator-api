@@ -7,7 +7,7 @@ namespace api.Controllers
 {
     public class Range
     {
-        public int Count { get; set; } = 10;
+        public int Count { get; set; } = 8;
         public bool Sort { get; set; } = false;
 
         //There are things to be done
